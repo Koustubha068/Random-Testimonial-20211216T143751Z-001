@@ -55,7 +55,11 @@ let quotesArray = ['NAPS is by far the most significant cultural force of the de
 'NAPS is doing the hard work of helping people get the rest they need. — U.S. News']
 
 let randomNumber = Math.floor(Math.random() * quotesArray.length) //generates random number between 0 and 6 which I will use to cover all items on the array. Stores this value in a variable called randomNumber
-document.getElementById('press-quote').textContent = quotesArray[randomNumber] // The site takes the text content of 'press quote' element and changes the text content to one of the items in the quotesArray using a randomNumber as the index selector. We created the variable randomNumber which is equal to a number rounded to the floor and multiplied with the lenght of the quotesArray which is 0-6. The atarting value of the list is 0
+document.getElementById('press-quote').textContent = '“' + quotesArray[randomNumber].split(' — ')(0) + '”' + '—' + quotesArray[randomNumber].split(' — ')(1) // The site takes the text content of 'press quote' element and changes the text content to one of the items in the quotesArray using a randomNumber as the index selector. We created the variable randomNumber which is equal to a number rounded to the floor and multiplied with the lenght of the quotesArray which is 0-6. The atarting value of the list is 0. Math.random gives a number between 0 and 1. Math.random is multiplied with the length of the array and then is rounded to the nearest integer(math.floor). //split says that go inside the string and break string apart when it sees a hyphen (—). The (0) only takes the beginning part. So it only takes the quote and not the author
+
+
+
+console.log(quotesArray[randomNumber].split(' — ')(0)) 
 </script>
 
 </body>
